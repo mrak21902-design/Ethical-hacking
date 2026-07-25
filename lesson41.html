@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Object</h2>
+
+<button onclick="showStudent()">Show Student</button>
+
+<p id="result"></p>
+
+<script>
+function showStudent() {
+    let student = {
+        name: "Love AK",
+        age: 23,
+        course: "Ethical Hacking"
+    };
+
+    document.getElementById("result").innerHTML =
+        "Name: " + student.name + "<br>" +
+        "Age: " + student.age + "<br>" +
+        "Course: " + student.course;
+}
+</script>
+
+</body>
+</html>

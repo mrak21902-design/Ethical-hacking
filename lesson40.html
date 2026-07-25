@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Array</h2>
+
+<button onclick="showNames()">Show Names</button>
+
+<p id="result"></p>
+
+<script>
+
+function showNames() {
+    let names = ["Love AK", "Rahul", "Anil", "Rani"];
+
+    document.getElementById("result").innerHTML =
+        names.join("<br>");
+}
+</script>
+
+</body>
+</html>
