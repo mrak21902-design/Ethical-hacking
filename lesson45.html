@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub User Fetch</title>
+</head>
+<body>
+
+<h2>GitHub User Search</h2>
+
+<input type="text" id="user" placeholder="GitHub Username">
+<button onclick="getUser()">Search</button>
+
+<p id="result"></p>
+
+<script>
+function getUser() {
+    let username = document.getElementById("user").value;
+
+    fetch("https://api.github.com/users/" + username)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("result").innerHTML =
+                "Name: " + data.name + "<br>" +
+                "Followers: " + data.followers + "<br>" +
+                "Public Repos: " + data.public_repos;
+        })
+        .catch(error => {
+            document.getElementById("result").innerHTML =
+                "Error: " + error;
+        });
+}
+</script>
+
+</body>
+</html>
