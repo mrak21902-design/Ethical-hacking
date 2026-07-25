@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+</head>
+<body>
+
+<h2>Password Strength Checker</h2>
+
+<input type="password" id="password" placeholder="Enter Password">
+<button onclick="checkPassword()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function checkPassword() {
+    let password = document.getElementById("password").value;
+
+    if (password.length < 8) {
+        document.getElementById("result").innerHTML = "Weak Password";
+    } else if (password.length < 12) {
+        document.getElementById("result").innerHTML = "Medium Password";
+    } else {
+        document.getElementById("result").innerHTML = "Strong Password";
+    }
+}
+</script>
+
+</body>
+</html>
