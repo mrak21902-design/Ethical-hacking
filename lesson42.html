@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Demo</title>
+</head>
+<body>
+
+<h2>JSON Demo</h2>
+
+<button onclick="showData()">Show Data</button>
+
+<p id="result"></p>
+
+<script>
+function showData() {
+
+    let data = `{
+        "name":"Love AK",
+        "age":23,
+        "course":"Ethical Hacking"
+    }`;
+
+    let student = JSON.parse(data);
+
+    document.getElementById("result").innerHTML =
+        "Name: " + student.name + "<br>" +
+        "Age: " + student.age + "<br>" +
+        "Course: " + student.course;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch API Demo</title>
+</head>
+<body>
+
+<h2>GitHub User Info</h2>
+
+<button onclick="loadUser()">Load User</button>
+
+<p id="result"></p>
+
+<script>
+function loadUser() {
+    fetch("https://api.github.com/users/torvalds")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("result").innerHTML =
+                "Name: " + data.name + "<br>" +
+                "Followers: " + data.followers + "<br>" +
+                "Public Repos: " + data.public_repos;
+        })
+        .catch(error => {
+            document.getElementById("result").innerHTML =
+                "Error: " + error;
+        });
+}
+</script>
+
+</body>
+</html>
