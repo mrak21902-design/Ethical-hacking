@@ -39,10 +39,23 @@ function login() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    if (username === "admin" && password === "Admin@123") {
+    let users = [
+        {username: "admin", password: "Admin@123"},
+        {username: "love", password: "Love@123"},
+        {username: "rani", password: "Rani@123"}
+    ];
 
+    let found = false;
+
+    for (let user of users) {
+        if (username === user.username && password === user.password) {
+            found = true;
+            break;
+        }
+    }
+
+    if (found) {
         document.getElementById("result").innerHTML = "Login Successful";
-
     } else {
 
         attempts--;
